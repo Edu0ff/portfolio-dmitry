@@ -1,0 +1,204 @@
+@font-face {
+    font-family: principal;
+    src: url(/fonts/RoSpritendoSemiboldBeta-vmVwZ.otf);
+}
+@font-face {
+    font-family: secundaria;
+    src: url(/fonts/AkashaRegular-Rprn6.ttf);
+}
+@font-face {
+    font-family: secundaria-italic;
+    src: url(/fonts/AkashaItalic-BWDd8.ttf);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+      --text: #0a0052;
+      --background: #f3ecfe;
+      --primary: #362e56;
+      --secondary: #4a8c4a;
+      --accent: #3220bc;
+      --grid: #0a00523a;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #b7adff;
+      --background: #080113;
+      --primary: #b1a9d1;
+      --secondary: #73b573;
+      --accent: #5643df;
+      --grid: #b6adff2f;
+    }
+  }
+
+*{
+    box-sizing: border-box;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+html,
+body,
+.background-grid{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+::-moz-selection {
+  color: var(--secondary);
+  background: var(--accent);
+}
+
+::selection {
+  color: var(--secondary);
+  background: var(--accent);
+}
+
+#line1{
+  display: inline-block;
+  position: fixed;
+  left: 17%;
+  width: 1.5px;
+  height: 100vh;
+  z-index: 10;
+  background-color: var(--accent);
+}
+
+#line2{
+  display: inline-block;
+  position: fixed;
+  right: 19.3%;
+  width: 1.5px;
+  height: 100vh;
+  z-index: 10;
+  background-color: var(--accent);
+}
+
+.background-name1{
+    color: var(--accent);
+    font-family: principal;
+    font-size: 11vw;
+    text-align: center;
+    position: relative;
+    top: -1vw;
+}
+.background-name2{
+    color: var(--accent);
+    font-family: principal;
+    font-size: 10vw;
+    position: relative;
+    bottom: -1vw;
+    transform: rotateY(-180deg);
+    background-color: var(--background);
+    z-index: 10;
+}
+
+nav{
+    font-family: secundaria;
+    font-size: clamp(1.3em, calc(1.3rem + ((1vw - 0.48em) * 2.3611)), 3em);
+    position: fixed;
+    top: 1.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: max-content;
+    padding: 0 1vw 0 1vw;
+    background-color: var(--background);
+    border: 1px solid var(--text);
+    border-radius: 15px;
+}
+
+nav a{
+    margin: 0 0.5vw 0 0.5vw;
+    text-decoration: none;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+nav a:hover{
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+#about,
+#skills,
+#education{
+    background-image: 
+        linear-gradient(0deg, var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 10px 10px;
+    border: 1px solid var(--text);
+    border-left: none;
+    border-right: none;
+}
+
+h1{
+    font-family: principal;
+    font-size: 1vw;
+    display: inline;
+    background: none;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+    display: flex;
+    animation: slide linear infinite;
+    white-space: nowrap;
+}
+  
+.slider span {
+    font-family: secundaria-italic;
+    font-size: min(max(1em, calc(1rem + ((1vw - 0.48em) * 2.7778))), 3em);
+    margin-right: 0.5vw;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+h2{
+  font-family: secundaria;
+  font-size: clamp(1.5em, calc(1.3rem + ((1vw - 0.48em) * 2.3611)), 3.5em);
+  background: none;
+  text-indent: 17%;
+}
+
+h3{
+  font-family: secundaria-italic;
+  font-size: clamp(1em, calc(1.3rem + ((1vw - 0.48em) * 2.3611)), 2em);
+  background: none;
+  text-align: center;
+}
+
+p{
+  font-family: monospace;
+  background: none;
+  text-align: center;
+}
+
+ul, li{
+  background: none;
+}
+
+main, footer{
+
+}
+
+footer p{
+  text-align: center;
+  margin: 5% 0;
+}
