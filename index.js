@@ -19,27 +19,25 @@ document.addEventListener("DOMContentLoaded", function() {
           slider.appendChild(span);
         }
       });
-  
-      // Clone the elements to make the slider infinite
+
       const clone = slider.cloneNode(true);
       if (clone) {
         slider.appendChild(clone);
       }
     }
   
-    // Function to adjust the animation duration based on content width
     function adjustAnimationDuration() {
       const sliderWidth = slider.scrollWidth;
       const containerWidth = document.querySelector('.slider-container').offsetWidth;
-      const animationDuration = sliderWidth / containerWidth * 10; // Adjust speed by changing the multiplier
+      const animationDuration = sliderWidth / containerWidth * 10;
   
       slider.style.animationDuration = `${animationDuration}s`;
     }
   
-    // Initialize the slider
     populateSlider();
     adjustAnimationDuration();
   
-    // Adjust the animation duration if the window is resized
     window.addEventListener('resize', adjustAnimationDuration);
   });
+
+//Dark-Light theme toggle
