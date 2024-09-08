@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const iAm = ["Data Scientist", "AI Researcher", "Instructor", "Professor", "Machine Learning Enthusiast"];
+    const iAm = ["Data Scientist", "AI Researcher", "Born Communicator", "Data Analyst", "Machine Learning Enthusiast", "Programmer"];
     const spacer = "✦";
     const slider = document.querySelector('.slider');
   
@@ -41,3 +41,26 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 //Dark-Light theme toggle
+
+//Full section scrolling
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+
+  const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.scrollIntoView({ behavior: "smooth" });
+          }
+      });
+  }, options);
+
+  sections.forEach(section => {
+      observer.observe(section);
+  });
+});
