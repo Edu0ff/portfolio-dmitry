@@ -224,9 +224,11 @@ h1{
 
 h2{
   font-family: secundaria;
-  font-size: clamp(1.5em, calc(1.3rem + ((1vw - 0.48em) * 2.3611)), 3.5em);
+  font-size: clamp(3rem, calc(3rem + ((1vw - 0.621875rem) * 4.3243)), 5.5rem);  
   background: none;
-  text-indent: 17%;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: 4%;
 }
 
 h3{
@@ -259,7 +261,13 @@ section {
   align-items: center;
 }
 
+footer{
+  position:relative;
+  bottom: -488%;
+  margin-top: 26%;
+}
+
 footer p{
   text-align: center;
-  margin: 5% 0;
+  margin: 1% 0;
 }
