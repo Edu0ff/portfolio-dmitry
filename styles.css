@@ -11,26 +11,47 @@
     src: url(/fonts/AkashaItalic-BWDd8.ttf);
 }
 
+/* Color Scheme preferred by user and manual toggle use*/
+
 @media (prefers-color-scheme: light) {
-    :root {
-      --text: #0a0052;
-      --background: #f3ecfe;
-      --primary: #362e56;
-      --secondary: #4a8c4a;
-      --accent: #3220bc;
-      --grid: #0a00523a;
-    }
+  :root {
+    --text: #0a0052;
+    --background: #f3ecfe;
+    --primary: #362e56;
+    --secondary: #4a8c4a;
+    --accent: #3220bc;
+    --grid: #0a00523a;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #b7adff;
-      --background: #080113;
-      --primary: #b1a9d1;
-      --secondary: #73b573;
-      --accent: #5643df;
-      --grid: #b6adff2f;
-    }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #b7adff;
+    --background: #080113;
+    --primary: #b1a9d1;
+    --secondary: #73b573;
+    --accent: #5643df;
+    --grid: #b6adff2f;
   }
+}
+
+body.dark-theme {
+  --text: #b7adff;
+  --background: #080113;
+  --primary: #b1a9d1;
+  --secondary: #73b573;
+  --accent: #5643df;
+  --grid: #b6adff2f;
+}
+
+body.light-theme {
+  --text: #0a0052;
+  --background: #f3ecfe;
+  --primary: #362e56;
+  --secondary: #4a8c4a;
+  --accent: #3220bc;
+  --grid: #0a00523a;
+}
 
 *{
     box-sizing: border-box;
