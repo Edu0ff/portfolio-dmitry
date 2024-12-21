@@ -152,9 +152,9 @@ body.dark-theme #theme-toggle::before {
     font-family: principal;
     font-size: 10vw;
     position: relative;
-    bottom: -1vw;
+    bottom: -17vw;
     transform: rotateY(-180deg);
-    background-color: var(--background);
+    background: none;
     z-index: 10;
 }
 
@@ -238,7 +238,8 @@ nav a:hover::after {
 
 #about,
 #skills,
-#education{
+#education,
+#contact{
     background-image: 
         linear-gradient(0deg, var(--grid) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid) 1px, transparent 1px);

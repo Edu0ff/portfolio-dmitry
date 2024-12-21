@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Full section scrolling
+
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
 
