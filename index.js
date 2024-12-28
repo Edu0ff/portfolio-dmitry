@@ -1,8 +1,15 @@
-//Slider Inicial
+//Nav Toggle
+
+document.getElementById('menu-icon').addEventListener('click', function () {
+  const nav = document.getElementById('navbar'); // Target the <nav> element
+  nav.classList.toggle('active'); // Toggle the 'active' class
+});
+
+// //Slider Inicial
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const iAm = ["Data Scientist", "AI Researcher", "Born Communicator", "Data Analyst", "Machine Learning Enthusiast", "Programmer"];
+    let iAm = ["Data Scientist", "AI Researcher", "Educator", "Machine Learning Engineer", "Programmer", "Zigling", "Psychologist"];
     const spacer = "✦";
     const slider = document.querySelector('.slider');
   
@@ -11,7 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
   
+    function shuffleArrayInPlace(array) {
+      // Fisher-Yates (Knuth) Shuffle (O(n))
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     function populateSlider() {
+      shuffleArrayInPlace(iAm);
       iAm.forEach(text => {
         const span = document.createElement('span');
         if (span) {

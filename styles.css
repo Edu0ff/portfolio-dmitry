@@ -151,8 +151,8 @@ body.dark-theme #theme-toggle::before {
     color: var(--accent);
     font-family: principal;
     font-size: 10vw;
-    position: relative;
-    bottom: -17vw;
+    position: absolute;
+    bottom: 0;
     transform: rotateY(-180deg);
     background: none;
     z-index: 10;
@@ -165,7 +165,7 @@ nav{
     font-size: clamp(1.3em, calc(1.3rem + ((1vw - 0.48em) * 2.3611)), 3em);
     position: fixed;
     top: 1.5vw;
-    left: 50%;
+    left: 48.7%;
     transform: translateX(-50%);
     z-index: 10;
     width: max-content;
@@ -217,22 +217,71 @@ nav a::after {
   background-color: var(--secondary);
   visibility: hidden;
   opacity: 0;
-  transition: opacity 1.5s;
+  transition: opacity 1s;
 }
 
 nav a:hover::after {
   visibility: visible;
   opacity: 1;
-  animation: blink 0.5s steps(3, start) infinite;
-  animation-delay: 0.6s;
+  animation: blink 0.8s steps(2, start) infinite;
+  animation-delay: 0.5s;
 }
 
 @keyframes blink {
   0%, 50% {
       opacity: 1;
   }
-  50%, 100% {
+  70%, 100% {
       opacity: 0;
+  }
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px; /* Height of the three lines */
+  width: 30px;  /* Width of the three lines */
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 4px; /* Thickness of the lines */
+  background-color: white;
+  transition: 0.3s; /* Smooth transition for animations */
+}
+
+@media (max-width: 768px) {
+  nav a {
+    display: none; /* Hide the links on smaller screens */
+  }
+
+  .menu-icon {
+    display: block; /* Show the hamburger icon */
+  }
+
+  nav.active a {
+    display: block; /* Show the links when nav is active */
+    width: 100%;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav.active .menu-icon span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg); /* Rotate top line */
+  }
+
+  nav.active .menu-icon span:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+  }
+
+  nav.active .menu-icon span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg); /* Rotate bottom line */
   }
 }
 
@@ -244,9 +293,9 @@ nav a:hover::after {
         linear-gradient(0deg, var(--grid) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid) 1px, transparent 1px);
     background-size: 10px 10px;
-    border: 1px solid var(--text);
+    /* border: 1px solid var(--text);
     border-left: none;
-    border-right: none;
+    border-right: none; */
 }
 
 h1{
@@ -328,6 +377,7 @@ footer{
   position:relative;
   bottom: -488%;
   margin-top: 26%;
+  background: none;
 }
 
 footer p{

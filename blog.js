@@ -51,13 +51,11 @@ async function displayBlogPosts() {
         postElement.classList.add('blog-post');
         
         const postDate = new Date(post.metadata.date);
-        console.log(post.metadata.date)
         const formattedDate = postDate.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-        console.log(formattedDate);
 
         postElement.innerHTML = `
             <h2>${post.metadata.title}</h2>
