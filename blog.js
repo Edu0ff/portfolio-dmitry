@@ -58,7 +58,7 @@ async function displayBlogPosts() {
         });
 
         postElement.innerHTML = `
-            <h2>${post.metadata.title}</h2>
+            <h3>${post.metadata.title}</h3>
             <p><strong>Date:</strong> ${formattedDate}</p>
             <div>${marked.parse(post.content)}</div>
         `;
