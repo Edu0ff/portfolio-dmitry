@@ -119,12 +119,12 @@ body,
 
 #theme-toggle::before {
   content: '☀️';
-  font-size: 24px;
+  font-size: 26px;
   transition: transform 0.4s ease, opacity 0.4s;
 }
 
 #theme-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -134,10 +134,6 @@ body.dark-theme #theme-toggle {
 
 body.dark-theme #theme-toggle::before {
   content: '🌙';
-}
-
-#theme-toggle:active {
-  transform: rotate(360deg);
 }
 
 .background-name1{
