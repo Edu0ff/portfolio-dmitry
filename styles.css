@@ -388,8 +388,38 @@ section {
 
 #about p{
   margin: 0 15% 0 15%;
-  font-size: clamp(0.6rem, calc(0.6rem + ((1vw - 0.621875rem) * 1.3838)), 1.4rem);;
+  font-size: clamp(0.6rem, calc(0.6rem + ((1vw - 0.621875rem) * 1.3838)), 1.4rem);
 }
+
+#contact p{
+  margin: auto 5% auto 5%;
+  font-size: clamp(0.6rem, calc(0.6rem + ((1vw - 0.621875rem) * 1.3838)), 1.4rem);
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  fill: #333; /* default color */
+  transition: fill 0.2s ease, transform 0.2s ease;
+  display: block;
+}
+
+.social-icon.linkedin:hover .icon {
+  fill: #0077b5;
+  transform: scale(1.1);
+}
+
+.social-icon.github:hover .icon {
+  fill: #24292e;
+  transform: scale(1.1);
+}
+
 
 footer{
   position:relative;
